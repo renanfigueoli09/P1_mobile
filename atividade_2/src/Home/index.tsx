@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView, StyleSheet, TextInput, Text, View, Button } from 'react-native';
+import { SafeAreaView, TextInput, Text, View, Button } from 'react-native';
 import { useState } from 'react';
+import styles from './styles';
 import AleatoriaNumeros from '../utils/AleatorizaNumero';
 const Home = () => {
     const [number1, setNumber1] = useState('');
@@ -49,21 +50,4 @@ const Home = () => {
         </View>
     );
 }
-
-const styles = StyleSheet.create({
-    view: {
-        flex: 1,
-        alignItems: "center",
-        justifyContent: "center"
-    },
-    input: {
-        height: 40,
-        margin: 12,
-        borderWidth: 1,
-        padding: 10,
-    },
-    view2: {
-        marginTop: 20
-    }
-});
 export default Home
