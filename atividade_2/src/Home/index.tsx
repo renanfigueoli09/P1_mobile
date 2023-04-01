@@ -7,7 +7,8 @@ const Home = () => {
     const [number1, setNumber1] = useState('');
     const [number2, setNumber2] = useState('');
     const [mostrarNumero, setMostrarNumero] = useState(false);
-    const [numeroEscolhido, setNumeroEscolhido] = useState(Number);
+    const [numeroEscolhido, setNumeroEscolhido] = useState(Array);
+
     return (
         <View style={styles.view}>
             <Text>Escolha dois Números</Text>
@@ -29,7 +30,13 @@ const Home = () => {
                 />
                 <Button title="Escolher Número" onPress={() => {
                     if (number1 && number2) {
-                        setNumeroEscolhido(AleatoriaNumeros(parseInt(number1), parseInt(number2)));
+                        setNumeroEscolhido([
+                            AleatoriaNumeros(parseInt(number1), parseInt(number2)),
+                            AleatoriaNumeros(parseInt(number1), parseInt(number2)),
+                            AleatoriaNumeros(parseInt(number1), parseInt(number2)),
+                            AleatoriaNumeros(parseInt(number1), parseInt(number2)),
+                            AleatoriaNumeros(parseInt(number1), parseInt(number2))
+                        ]);
                         setMostrarNumero(true);
                     } else {
                         setMostrarNumero(false);
@@ -37,12 +44,18 @@ const Home = () => {
                 }} />
             </SafeAreaView>
             {mostrarNumero && (<View style={styles.view2}>
-                <Text>Número: {numeroEscolhido}</Text>
-
+                <Text>5 Números Aleatórios entre eles:</Text>
+                <Text>
+                    {numeroEscolhido.map((item: any, index: any) => {
+                        if (numeroEscolhido.length == (index + 1))return item + ".";
+                        else return item + ", "
+                    })}
+                </Text>
                 <Button title="Limpar"
                     onPress={() => {
                         setNumber1('');
                         setNumber2('');
+                        setNumeroEscolhido([])
                         setMostrarNumero(false);
                     }}
                 />

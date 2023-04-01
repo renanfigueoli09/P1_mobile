@@ -12,7 +12,8 @@ const styles = StyleSheet.create({
         padding: 10,
     },
     view2: {
-        marginTop: 20
+        marginTop: 20,
+        alignItems:"center"
     }
 });
 export default styles;
