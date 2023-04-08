@@ -1,5 +1,9 @@
 import {StyleSheet} from "react-native"
 
-const StlyeButton = StyleSheet.create({
-    
+export const StlyeButton = StyleSheet.create({
+    Button:{
+        width: 20,
+        height: 20,
+        backgroundColor: "blue"
+    }
 });

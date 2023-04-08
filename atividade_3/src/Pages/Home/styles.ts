@@ -1,5 +1,9 @@
 import {StyleSheet} from "react-native"
 
-const StyleHome = StyleSheet.create({
-
+export const StyleHome = StyleSheet.create({
+    home:{
+        justifyContent: "center",
+        display: "flex",
+        backgroundColor: "#008000"
+    }
 });
