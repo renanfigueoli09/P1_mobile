@@ -8,7 +8,7 @@ export const Home = () => {
     return <>
         <View style={StyleHome.home}>
             <View style={StyleHome.butons}>
-                {alfabeto.map((item: any) => {
+                {alfabeto.map((item: string) => {
                     return <View style={StyleHome.button}>
                         <ButtonP caracter={item} />
                     </View>
